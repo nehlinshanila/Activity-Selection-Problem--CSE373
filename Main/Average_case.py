@@ -28,12 +28,11 @@ def heap_sort(arr):
     for i in range(array_size - 1, 0, -1):
         arr[i], arr[0] = arr[0], arr[i]
         heapify(arr, i, 0)
-array_string = ''
 
 def measure_time(size_of_array):
     array = [random.randint(1, size_of_array) for _ in range(size_of_array)]
     
-    with open('array.txt', 'a') as file: #opening the file in append mode
+    with open('average_case_array.txt', 'a') as file: #opening the file in append mode
         file.seek(0, 2) #move the file pointer to the end 
         file.write(f'size of {size_of_array} : {array} \n\n') #writing or appending to the last pointer of the file
     
@@ -44,7 +43,7 @@ def measure_time(size_of_array):
     return end_time - start_time
 
 input_size_start = 10   #just a minimum size to start off the experiment
-input_size_end = 1000000  #the maximum size to end
+input_size_end = 100000  #the maximum size to end
 
 input_sizes = [] #to store all the size value of the input data
 
