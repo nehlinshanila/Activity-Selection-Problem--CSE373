@@ -43,7 +43,7 @@ def measure_time(size_of_array):
     return end_time - start_time
 
 input_size_start = 10   #just a minimum size to start off the experiment
-input_size_end = 100000  #the maximum size to end
+input_size_end = 1000000  #the maximum size to end
 
 input_sizes = [] #to store all the size value of the input data
 
