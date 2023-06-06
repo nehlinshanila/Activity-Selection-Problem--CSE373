@@ -1,0 +1,22 @@
+1. select an algorithm(for the activity selection) 
+2. time complexity check
+3. find the code
+4. random array generate of integers  ---done
+5.  start_time   ---done
+    sortingOfArray  ---done
+    end_time   ---done
+    execution time = end_time - start_time
+6. dynamically changing of input data size
+7. adding the execution times of the sorted dynamic arrays
+8. plotting the results
+
+
+The time complexity of the Greedy algorithm for activity selection is O(nlog(n)) 
+where n is the number of activities
+
+
+ greedy_activity_selection function implements the greedy algorithm for 
+ activity selection. It sorts the activities based on their finish time 
+ and then iteratively selects the activity with the earliest finish time
+  that doesn't conflict with previously selected activities. The selected 
+  activities are stored in the selected_activities list.
