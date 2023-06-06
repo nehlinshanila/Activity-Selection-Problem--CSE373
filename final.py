@@ -68,7 +68,7 @@ activities_set = generate_random_activities(max_num_activities, 0, 100, 1, 10)
 # num_activities (maximum number of activities), min_start_time, max_start_time, min_duration, and max_duration. The resulting activities are stored in the activities_set variable.
 
 # Generate random activities and measure execution time
-for n in range(100, 1001, 100):
+for n in range(10, 10000, 10):
     random_activities = activities_set[:n]  # Use a subset of activities for each input size
     # This loop iterates over a range of values from 100 to 1000 (inclusive) with a step size of 100. For each value n, a subset of activities is extracted from activities_set using slicing (activities_set[:n]). This subset represents the activities for the current input size. 
 
@@ -88,18 +88,19 @@ for n in range(100, 1001, 100):
     # The current input size (n) and the average execution time are appended to the num_activities and execution_times lists, respectively.
 
 # Plot the graph
-plt.plot(num_activities, execution_times)
+plt.plot(num_activities, execution_times, marker='.')
 plt.xlabel('Number of Activities')
 plt.ylabel('Execution Time (seconds)')
 plt.title('Execution Time of Activity Selection Algorithm')
+plt.show()
 # The plt.plot function is used to plot the graph with num_activities on the x-axis and execution_times on the y-axis. The plt.xlabel, plt.ylabel, and plt.title functions are used to set the labels for the x-axis, y-axis, and the title of the graph, respectively.
 
 # Save the graph as a PNG image
-plt.savefig('time_complexity_graph.png')
+# plt.savefig('time_complexity_graph.png')
 # The plt.savefig function is used to save the graph as a PNG image file named "time_complexity_graph.png". It takes the file name as an argument.
 
 # Display a message after saving the image
-print("Time complexity graph saved as 'time_complexity_graph.png'.")
+# print("Time complexity graph saved as 'time_complexity_graph.png'.")
 
 
 # {{{This code generates random activities with specified

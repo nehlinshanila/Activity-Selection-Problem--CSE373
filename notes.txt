@@ -1,13 +1,23 @@
-The greedy algorithm makes judgments based on the information at each iteration without considering the broader problem; hence it does not produce the best answer for every problem.
-The problematic part for a greedy algorithm is analyzing its accuracy. Even with the proper solution, it is difficult to demonstrate why it is accurate. 
-Optimization problems (Dijkstra’s Algorithm) with negative graph edges cannot be solved using a greedy algorithm.
+The greedy algorithm makes judgments based on the information at each iteration 
+without considering the broader problem; hence it does not produce the best answer for 
+every problem.
+The problematic part for a greedy algorithm is analyzing its accuracy. 
+Even with the proper solution, it is difficult to demonstrate why it is accurate. 
+Optimization problems (Dijkstra’s Algorithm) with negative graph edges cannot be 
+solved using a greedy algorithm.
 
-Used for Constructing Minimum Spanning Trees: Prim’s and Kruskal’s Algorithms used to construct minimum spanning trees are greedy algorithms.
-Used to Implement Huffman Encoding: A greedy algorithm is utilized to build a Huffman tree that compresses a given image, spreadsheet, or video into a lossless compressed file.
-Used to Solve Optimization Problems: Graph - Map Coloring, Graph - Vertex Cover, Knapsack Problem, Job Scheduling Problem, and activity selection problem are classic optimization problems solved using a greedy algorithmic paradigm.
+Used for Constructing Minimum Spanning Trees: Prim’s and Kruskal’s Algorithms used to 
+construct minimum spanning trees are greedy algorithms.
+Used to Implement Huffman Encoding: A greedy algorithm is utilized to build a Huffman 
+tree that compresses a given image, spreadsheet, or video into a lossless compressed file.
+Used to Solve Optimization Problems: Graph - Map Coloring, Graph - Vertex Cover, 
+Knapsack Problem, Job Scheduling Problem, and activity selection problem are classic 
+optimization problems solved using a greedy algorithmic paradigm.
 
-First, the greedy method is not guaranteed to find the best solution. Second, it can be quite slow.
-Finally, it is often difficult to prove that the greedy method will indeed find the global optimum.
+First, the greedy method is not guaranteed to find the best solution. Second, 
+it can be quite slow.
+Finally, it is often difficult to prove that the greedy method will indeed find the 
+global optimum.
 
 Pseudo Code of Greedy Algorithms
 One example of pseudo code for a greedy algorithm is given below:
