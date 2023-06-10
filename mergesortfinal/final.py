@@ -59,27 +59,51 @@ def generate_random_activity_list(size):
     return activity_list
 
 # Generate random activity list
-activity_list = generate_random_activity_list(10)
-print("Original Activity List:")
-for activity in activity_list:
-    print(activity)
+activity_list = generate_random_activity_list(10000)
+
+# Save original activity list to a file
+with open('original_activity_list.txt', 'w') as file:
+    file.write("Original Activity List (Unsorted):\n")
+    for activity in activity_list:
+        file.write(str(activity) + '\n')
 
 # Measure execution time
 start_time = time.time()
-selected_activities = activity_selection(activity_list)
+
+# Merge sort
+sorted_activities = merge_sort(activity_list)
+
+# Activity selection
+selected_activities = activity_selection(sorted_activities)
+
 end_time = time.time()
 
 execution_time = end_time - start_time
-print("Execution Time:", execution_time, "seconds")
+
+# Save sorted activity list to a file
+with open('sorted_activity_list.txt', 'w') as file:
+    file.write("Sorted Activity List:\n")
+    for activity in sorted_activities:
+        file.write(str(activity) + '\n')
+
+print("Total Execution Time:", execution_time, "seconds")
 
 # Plot time complexity graph
-sizes = [10, 100, 500, 1000, 2000, 5000, 10000]
+min_size = 10
+max_size = 100000
+step = 100
+
+sizes = list(range(min_size, max_size + 1, step))
 times = []
 
 for size in sizes:
     activity_list = generate_random_activity_list(size)
     start_time = time.time()
-    activity_selection(activity_list)
+    # Merge sort
+    sorted_activities = merge_sort(activity_list)
+    # Activity selection
+    selected_activities = activity_selection(sorted_activities)
+
     end_time = time.time()
     execution_time = end_time - start_time
     times.append(execution_time)
@@ -88,4 +112,5 @@ plt.plot(sizes, times, marker='.')
 plt.xlabel('Input Size')
 plt.ylabel('Execution Time (seconds)')
 plt.title('Time Complexity Graph')
+plt.grid(True)
 plt.show()
