@@ -1,7 +1,7 @@
 
 import './App.css';
 // import BarChange from './components/test';
-import Main from './components/main';
+import Main from './shanila/main';
 
 function App() {
   return (
