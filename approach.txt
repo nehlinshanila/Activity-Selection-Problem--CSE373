@@ -20,3 +20,47 @@ where n is the number of activities
  and then iteratively selects the activity with the earliest finish time
   that doesn't conflict with previously selected activities. The selected 
   activities are stored in the selected_activities list.
+
+
+  1. Greedy Choice Property
+
+If an optimal solution to the problem can be found 
+by choosing the best choice at each step without reconsidering
+ the previous steps once chosen, the problem can be solved using
+  a greedy approach. This property is called greedy choice property.
+
+
+2. Optimal Substructure
+
+If the optimal overall solution to the problem corresponds to the optimal 
+solution to its subproblems, then the problem can be solved using a greedy
+ approach. This property is called optimal substructure.
+
+
+
+---Different Types of Greedy Algorithm---
+Selection Sort
+Knapsack Problem
+Minimum Spanning Tree
+Single-Source Shortest Path Problem
+Job Scheduling Problem
+Prim's Minimal Spanning Tree Algorithm
+Kruskal's Minimal Spanning Tree Algorithm
+Dijkstra's Minimal Spanning Tree Algorithm
+Huffman Coding
+Ford-Fulkerson Algorithm
+
+
+Activity Selection problem is a approach of selecting non-conflicting tasks 
+based on start and end time and can be solved in O(N logN) time using a simple 
+greedy approach. Modifications of this problem are complex and interesting which 
+we will explore as well. Suprising, if we use a Dynamic Programming approach, the
+ time complexity will be O(N^3) that is lower performance
+
+
+The problem statement for Activity Selection is that "Given a set of n activities
+ with their start and finish times, we need to select maximum number of non-conflicting 
+ activities that can be performed by a single person, given that the person can handle 
+ only one activity at a time." The Activity Selection problem follows Greedy approach 
+ i.e. at every step, we can make a choice that looks best at the moment to get the optimal
+solution of the complete problem.

@@ -1,29 +1,55 @@
-# to test everything before the final one
+import random
+import time
+import matplotlib.pyplot as plt
 
-data = {
-  "start_time": [2 , 6 , 4 , 10 , 13 , 7],
-  "finish_time": [5 , 10 , 8 , 12 , 14 , 15],
-  "activity": ["Homework" , "Presentation" , "Term paper" , "Volleyball practice" , "Biology lecture" , "Hangout"]
-}
+def ActivitySelection(start, finish, n):
+    print("The following activities are selected:");
 
-selected_activity =[]
-start_position = 0
-# sorting the items in ascending order with respect to finish time
-tem = 0
-for i in range(0 , len(data['finish_time'])):
-   for j in range(0 , len(data['finish_time'])):
-   	 if data['finish_time'][i] < data['finish_time'][j]:
-            tem = data['activity'][i], data['finish_time'][i], data['start_time'][i]
-            data['activity'][i], data['finish_time'][i], data['start_time'][i] = data['activity'][j], data['finish_time'][j], data['start_time'][j]
-            data['activity'][j], data['finish_time'][j], data['start_time'][j] = tem
-# by default, the first activity is inserted in the list of activities to be selected.
+    j = 0
+    print(j,end=" ")
+    for i in range(1,n):
 
-selected_activity.append(data['activity'][start_position])
-for pos in range(len(data['finish_time'])):
-   if data['start_time'][pos] >= data['finish_time'][start_position]:
-   	selected_activity.append(data['activity'][pos])
-start_position = pos
+        if start[i] >= finish[j]:
+            print(i,end=" ")
+            j = i
 
-print(f"The student can work on the following activities: {selected_activity}")
-# Results
-# The student can work on the following activities: ['Homework', 'Presentation', 'Volleyball practice', 'Biology lecture']
+# n = int(input("Enter the total number of integers: "))
+# input_sizes = [10, 100, 1000, 10000]  # Example input sizes
+input_sizes = [10, 100]  # Example input sizes
+
+execution_times = []
+# start = [random.randint(1, 100) for _ in range(n)]
+# finish = [start[i] + random.randint(1, 100) for i in range(n)]
+# n = len(start)
+# ActivitySelection(start, finish, n)
+for n in input_sizes:
+    start = [random.randint(1, 100) for _ in range(n)]
+    finish = [start[i] + random.randint(1, 100) for i in range(n)]
+
+    start_time = time.time()
+    ActivitySelection(start, finish, n)
+    end_time = time.time()
+
+    execution_time = end_time - start_time
+    execution_times.append(execution_time)
+
+print("Randomly generated start times of activity:", start)
+print("Randomly generated start times of activity:", finish)
+
+def arrange_activities(start, finish):
+    activities = [(i, start[i], finish[i]) for i in range(len(start))]
+    activities.sort(key=lambda x: x[2])
+    arranged_activities = [activity[0] for activity in activities]
+
+    return arranged_activities
+
+
+arranged = arrange_activities(start, finish)
+print("Arranged activities:", arranged)
+
+
+plt.plot(input_sizes, execution_times, marker='o')
+plt.xlabel('Input Size')
+plt.ylabel('Execution Time (s)')
+plt.title('Time Complexity of Activity Selection')
+plt.show()

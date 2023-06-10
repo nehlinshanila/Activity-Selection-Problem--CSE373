@@ -68,7 +68,7 @@ activities_set = generate_random_activities(max_num_activities, 0, 100, 1, 10)
 # num_activities (maximum number of activities), min_start_time, max_start_time, min_duration, and max_duration. The resulting activities are stored in the activities_set variable.
 
 # Generate random activities and measure execution time
-for n in range(10, 10000, 10):
+for n in range(10, 1000, 10):
     random_activities = activities_set[:n]  # Use a subset of activities for each input size
     # This loop iterates over a range of values from 100 to 1000 (inclusive) with a step size of 100. For each value n, a subset of activities is extracted from activities_set using slicing (activities_set[:n]). This subset represents the activities for the current input size. 
 
