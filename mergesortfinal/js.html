@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="timeComplexityGraph"></canvas>
+
+    <script>
+        // Generate the graph using Chart.js
+        const sizes = [10, 100, 500, 1000, 2000, 5000, 10000];
+        const times = [0.1, 0.5, 1.2, 2.4, 3.8, 8.2, 15.5]; // Replace with your actual time data
+
+        const ctx = document.getElementById('timeComplexityGraph').getContext('2d');
+
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: sizes.map(String),
+            datasets: [
+              {
+                label: 'Execution Time (seconds)',
+                data: times,
+                borderColor: 'rgb(75, 192, 192)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                display: true,
+                title: {
+                  display: true,
+                  text: 'Input Size',
+                },
+              },
+              y: {
+                display: true,
+                title: {
+                  display: true,
+                  text: 'Execution Time (seconds)',
+                },
+              },
+            },
+          },
+        });
+    </script>
+</body>
+</html>

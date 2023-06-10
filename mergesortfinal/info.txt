@@ -1,0 +1,9 @@
+This code implements the activity selection problem using the merge sort algorithm.
+
+The activity selection problem involves selecting a maximum number of activities from a given list, where each activity has a start time and a finish time. The goal is to select activities in such a way that they do not overlap (i.e., their time intervals do not intersect) and the total number of selected activities is maximized.
+
+The code first defines a merge sort function to sort the activities based on their finish times in ascending order. It then defines a merge function to merge two sorted lists.
+
+The activity_selection function takes in a list of activities, sorts them using merge sort, and selects the activities that can be performed without overlapping. It iterates through the sorted activities, adding an activity to the selected list if its start time is greater than or equal to the finish time of the previously selected activity.
+
+Finally, the code generates a random activity list, performs activity selection on it, and prints the original activity list as well as the selected activities.

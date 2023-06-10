@@ -1,0 +1,31 @@
+import random
+import time
+import matplotlib.pyplot as plt
+
+def ActivitySelection(start, finish, n):
+    j = 0
+    for i in range(1, n):
+        if start[i] >= finish[j]:
+            j = i
+
+# Measure the execution time for different input sizes
+input_sizes = [10, 100, 1000, 10000]  # Example input sizes
+execution_times = []
+
+for n in input_sizes:
+    start = [random.randint(1, 100) for _ in range(n)]
+    finish = [start[i] + random.randint(1, 100) for i in range(n)]
+
+    start_time = time.time()
+    ActivitySelection(start, finish, n)
+    end_time = time.time()
+
+    execution_time = end_time - start_time
+    execution_times.append(execution_time)
+
+# Plot the time complexity graph
+plt.plot(input_sizes, execution_times, marker='o')
+plt.xlabel('Input Size')
+plt.ylabel('Execution Time (s)')
+plt.title('Time Complexity of Activity Selection')
+plt.show()
