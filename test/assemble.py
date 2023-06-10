@@ -3,7 +3,7 @@ import greedyapproach as gra
 import randomgenerate as rand
 
 import time
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 
 def measure_time(size_of_array):
@@ -33,7 +33,8 @@ def measure_time(size_of_array):
 
 
 input_size_start = 10
-input_size_end = 10000
+input_size_end = 100000
+# dont go above this= disaster timing
 
 input_sizes = []
 while input_size_start <= input_size_end:
@@ -69,6 +70,13 @@ with open("execution_sort_time.txt", "w") as file:
     for time, sizes in zip(execution_times_sort, input_sizes):
         file.write(f'execution_sort_time : {time}, size = {sizes}')
 
-# matplot e total time show korte hobe kotokkhon lagse for big datasets
+total_execution_time = end_time_total - start_time_total
+# plotting
+plt.plot(input_sizes, execution_times_final, marker='.')
+plt.xlabel("input_size")
+plt.ylabel("execution_time")
+plt.title(f'greedy_approach_time_complexity: {total_execution_time}')
+plt.grid(True)
 
+plt.show()
 
