@@ -1,4 +1,5 @@
-# Activity Selection Problem using MergeSort (Greedy Method) :recycle:
+ACTIVITY SELECTION PROBLEM USING MERGESORT (GREEDY METHOD) :recycle:
+
 This repository provides an efficient implementation of the Activity Selection Problem using the Merge Sort algorithm with a greedy approach. The Activity Selection Problem involves selecting a maximum number of non-overlapping activities from a given set, where each activity has a start time and an end time.
 The implementation utilizes the well-known Merge Sort algorithm, which divides the input array into smaller subarrays, sorts them, and then merges them back together. The greedy approach comes into play during the merging step, where the activities are sorted based on their end times.
 
