@@ -1,7 +1,6 @@
 # Activity Selection Problem Using MergeSort (Greedy Method) :recycle:
 
-This repository provides an efficient implementation of the Activity Selection Problem using the Merge Sort algorithm with a greedy approach. The Activity Selection Problem involves selecting a maximum number of non-overlapping activities from a given set, where each activity has a start time and an end time.
-The implementation utilizes the well-known Merge Sort algorithm, which divides the input array into smaller subarrays, sorts them, and then merges them back together. The greedy approach comes into play during the merging step, where the activities are sorted based on their end times.
+This repository provides an efficient implementation of the Activity Selection Problem using the Merge Sort algorithm with a greedy approach. The Activity Selection Problem involves selecting a maximum number of non-overlapping activities from a given set, where each activity has a start time and an end time. The implementation utilizes the well-known Merge Sort algorithm, which divides the input array into smaller subarrays, sorts them, and then merges them back together. The greedy approach comes into play during the merging step, where the activities are sorted based on their end times. run: ./mergesortfinal/final.py
 
 Incentive: The Activity Selection Problem is one of the algorithms out of three in our final group project of CSE373 course. The other two being QuickSort using Greedy method and HeapSort using Dynamic method done by other team mates in https://github.com/ZahinSam1/Advanced_Algorithms_Projects.git
 
